@@ -20,7 +20,6 @@ function App() {
       techs:["java","javascript"]
     })
 
-    console.log(response.data)
     setRepositories([...repositories, response.data])
     
   }
@@ -29,7 +28,6 @@ function App() {
     await api.delete(`/repositories/${id}`)
     const index=repositories.findIndex((val)=> val.id===id);
     repositories.splice(index,1);
-    console.log(repositories)
     setRepositories([...repositories]);
    
   }
